@@ -1,0 +1,195 @@
+/* General Page Styling */
+
+h5,h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+h6{
+    font-size: 1.9rem;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-item .nav-link {
+    color: white !important;
+    font-weight: bold;
+}
+
+.nav-item .nav-link:hover {
+    color: #ffdd57 !important;
+}
+
+.btn-primary {
+    background: #236ec9;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #003d82;
+}
+
+/* Login Page Styling */
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Styling */
+.card {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+/* Buttons */
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Appointment Confirmation Message */
+#confirmationMessage {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(40, 123, 167, 0.9);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Form Styling */
+.form-control {
+    background: white;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 5px rgba(24, 68, 100, 0.5);
+    border-color: rgba(24, 68, 100, 0.8);
+}
+
+/* Validation Feedback */
+.invalid-feedback {
+    display: none;
+    color: #ff4c4c;
+}
+
+/* Doctors List */
+.list-group-item {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+
+/* Ensure carousel images do not get cropped */
+.carousel-img {
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Adjust as needed */
+}
+
+/* Make images responsive and prevent cropping */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Fix for smaller screens (mobile & tablet) */
+@media (max-width: 768px) {
+    .carousel-img {
+        max-height: 300px; /* Adjust for mobile */
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+      /* border-radius: 50%; Makes it rounded */
+      width: 50px; /* Adjust button size */
+      height: 50px;
+      top: 50%;
+  }
+
+/* jumbotron */
+  .custom-jumbotron {
+    background-color: #585d5c; /* Change to any color */
+    color: white; /* Ensures text is visible */
+}
+
+/* Adjustments for Mobile Screens */
+@media (max-width: 768px) {
+    .jumbotron {
+        padding: 20px;
+    }
+    .card {
+        max-width: 90%;
+    }
+}
+.accordion-item {
+    border: none; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents overflow issues */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted effect */
+    margin-bottom: 10px; /* Adds spacing between items */
+}
+
+.accordion-button {
+    background-color: #f8f9fa; /* Light background */
+    font-weight: bold; /* Emphasize text */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth effects */
+    border-bottom: 1px solid #ddd; /* Subtle separator */
+}
+
+.accordion-button:hover, .accordion-button:focus {
+    background-color: #e9ecef; /* Slightly darker hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Adds depth */
+}
+
+.accordion-button::after {
+    filter: brightness(0.5); /* Darkens the default Bootstrap icon */
+}
+
+.accordion-body {
+    background-color: #ffffff; /* Clean white background */
+    padding: 15px; /* Comfortable spacing */
+    border-radius: 5px; /* Slightly rounded corners inside */
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft inner shadow */
+}
