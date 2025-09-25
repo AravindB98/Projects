@@ -1,13 +1,6 @@
-#WebDesign_GroupAssignment_Saturday_Set2 :
+#CareHub- Hospital Management System :
 
-Group Members :
-1.Aadil Abdul Karim 
-2.Aravind Balaji
-3.Arfath Ahmed Sharieff
-4.Maharshi Rinkubhai Patel
-5.Monisha N 
-
-Project Topic:Hospital Appointment System 
+Project Topic:Hospital Management System 
 
 Project Overview:
 	This project is designed as a web-based system that includes multiple functionalities such as login page, appointments booked page, and doctors availability page - integrating Bootstrap for styling and responsiveness. The project is built using HTML, CSS, and JavaScript.
