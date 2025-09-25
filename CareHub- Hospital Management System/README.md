@@ -135,45 +135,6 @@ Validation & Error Handling:
 
 <div> – Used to display error messages (e.g., style="display:none; color:red;").
 
-Team members’ individual contributions:
-
-1.Aadil Abdul Karim  :
- Appointments.html
-Carousel
-Accordion
-Modal 
-Table responsive
-
-2.Aravind Balaji:
-Index.html
-Navbar
-List Group
-Modal 
-Table responsive
-
-3.Arfath Ahmed Sharieff :
-style.css
-Buttons
-Responsive utilities
-Modal 
-Table responsive
-
-4.Maharshi Rinkubhai Patel:
-doctors.html
-Forms
-Jumbotron
-Modal 
-Table responsive
-
-5.Monisha N:
-Login.html
-Tables
-Cards
-Modal 
-Table responsive
-
-
-
 
 
 
