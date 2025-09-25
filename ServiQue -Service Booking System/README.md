@@ -1,12 +1,6 @@
-> **Group 17 – INFO 5100** 
+> **INFO 5100** 
 # ServiQue – A Service-Based Platform
-
-## Team Members:
-
-> Abhinav Kumar Piyush – 002038671  
-> Aravind Balaji – 001564773  
-> Tanya Bansal – 002020208 
-
+ 
 ## 📌 Project Overview
 
 **ServiQue** is a Java Swing-based desktop application that provides a unified platform for customers to access a wide range of **home and personal care services** — including salons, appliance repairs, pest control, and more — from the comfort of their homes. It handles the complete lifecycle of service booking: from request to delivery to feedback.
