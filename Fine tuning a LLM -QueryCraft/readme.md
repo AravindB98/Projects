@@ -8,7 +8,7 @@
 > **RAG-Enhanced SQL Generation: Fine-Tuning TinyLlama-1.1B for Natural Language to SQL Translation**
 
 <p align="center">
-  <img src="(https://github.com/AravindB98/Projects/blob/main/Fine%20tuning%20a%20LLM%20-QueryCraft/results/visualisations/architecture.png)" alt="QueryCraft Architecture" width="750">
+  <img src="[results/visualisations/architecture.png]" alt="QueryCraft Architecture" width="750">
 </p>
 
 ---
