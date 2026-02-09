@@ -272,18 +272,7 @@ results/visualizations/
 
 ## 🎥 Video Walkthrough
 
-5-7 minute demonstration covering:
-
-| Section | Duration | Content |
-|---------|----------|---------|
-| Intro | 0:30 | Project overview, motivation |
-| Problem & Solution | 1:00 | Architecture diagram |
-| Dataset | 1:00 | Spider dataset, domain coverage |
-| Methodology | 1:30 | QLoRA config, RAG pipeline (show Day 5 notebook code) |
-| Results | 1:30 | HP comparison, evaluation metrics (show generated plots) |
-| Error Analysis | 0:45 | Error categories, improvements |
-| **Live Demo** | 1:30 | Gradio — queries across 3 databases |
-| Conclusion | 0:30 | Key achievements, future work |
+📺 **[Watch the Demo Video](https://youtu.be/3ID1DSgGKvE)**
 
 ---
 
@@ -315,7 +304,6 @@ results/visualizations/
 
 **Aravind Balaji**
 MS in Information Systems | Northeastern University
-NUID: 001564773
 
 ---
 
