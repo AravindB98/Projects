@@ -7,6 +7,10 @@
 
 > **RAG-Enhanced SQL Generation: Fine-Tuning TinyLlama-1.1B for Natural Language to SQL Translation**
 
+<p align="center">
+  <img src="assets/architecture.png" alt="QueryCraft Architecture" width="750">
+</p>
+
 ---
 
 ## 📋 Project Overview
@@ -55,6 +59,125 @@ User Question ──► Embedding ──► Vector Search ──► Schema Conte
 
 ---
 
+## 🌍 Real-World Applications & Market Impact
+
+### Why QueryCraft Matters
+
+Existing enterprise NL-to-SQL solutions suffer from three key limitations that QueryCraft's architecture addresses:
+
+| Problem with Existing Solutions | How QueryCraft Solves It |
+|--------------------------------|--------------------------|
+| **Vendor lock-in** — Solutions like Power BI Copilot or BigQuery NL only work within their own ecosystem | **Open-source & portable** — Built on Hugging Face stack, runs on any database, deployable anywhere |
+| **High cost** — Enterprise NL-to-SQL tools cost $50K-500K/year in licensing fees | **Free to run** — Trains on a free Colab GPU, inference on consumer hardware, no API costs |
+| **Black-box models** — Proprietary solutions (GPT-4, PaLM) offer no visibility into how SQL is generated | **Fully transparent** — Open weights, inspectable RAG retrieval, explainable prompt construction |
+| **No schema awareness** — Generic LLMs hallucinate table/column names without context | **RAG-enhanced** — ChromaDB retrieves actual schema before generation, reducing hallucinations by 3.2% |
+| **Requires massive compute** — Most solutions use 70B-175B parameter models | **Lightweight** — 1.1B parameters with 4-bit quantization, runs on a single T4 GPU (free tier) |
+| **One-size-fits-all** — Pre-built tools can't be fine-tuned on company-specific SQL patterns | **Customizable** — QLoRA fine-tuning adapts to any domain's SQL patterns in under 10 minutes |
+
+### Industry Use Cases
+
+| Industry | Application | Example Query | Business Value |
+|----------|-------------|---------------|----------------|
+| Finance | Portfolio Analysis | "Total investment by sector" | Faster reporting |
+| Healthcare | Patient Records | "Patients with diabetes over 60" | Clinical insights |
+| Retail | Sales Analytics | "Top 10 products this quarter" | Inventory planning |
+| HR | Workforce Planning | "Average salary by department" | Compensation analysis |
+| Education | Student Tracking | "Students with GPA > 3.5" | Academic monitoring |
+| Logistics | Supply Chain | "Orders pending > 7 days" | Operational efficiency |
+
+### How QueryCraft Compares to Enterprise Solutions
+
+#### vs Google BigQuery Natural Language
+- BigQuery NL is **locked to Google Cloud** — QueryCraft works with any SQLite, PostgreSQL, or MySQL database
+- BigQuery charges per query — QueryCraft runs **locally at zero cost**
+- QueryCraft's RAG pipeline can be customized with company-specific schema glossaries
+
+#### vs Microsoft Power BI Copilot
+- Power BI Copilot requires **Microsoft 365 E3+ license ($36/user/month)**
+- QueryCraft is **completely free** and open-source
+- Power BI generates DAX, not standard SQL — QueryCraft generates **portable SQL** that works across databases
+
+#### vs Salesforce Einstein Analytics
+- Einstein is **Salesforce-only** (SOQL, not SQL)
+- Requires **Salesforce Enterprise license ($150+/user/month)**
+- QueryCraft can be deployed as a **microservice** serving any application
+
+#### vs Snowflake Cortex AI / Databricks Genie
+- Both require expensive **data warehouse subscriptions**
+- QueryCraft can generate SQL for **any database**, not just cloud warehouses
+- Fine-tuning on company data takes **7 minutes** vs weeks of enterprise deployment
+
+### Companies Deploying NL-to-SQL Technology
+
+#### FAANG / Big Tech
+
+| Company | Product | Technology | Limitation QueryCraft Solves |
+|---------|---------|------------|------------------------------|
+| **Google** | BigQuery NL | PaLM + SQL | GCP lock-in, per-query cost |
+| **Amazon** | QuickSight Q | ML + NL-to-SQL | AWS-only, enterprise pricing |
+| **Meta** | Internal Platform | Custom NLP + SQL | Not publicly available |
+| **Apple** | Internal BI Tools | ML + SQL Generation | Proprietary, closed-source |
+| **Microsoft** | Power BI Copilot | GPT-4 + DAX/SQL | $36/user/month, M365 required |
+| **Netflix** | DJ (DataJunction) | Semantic Layer + SQL | Internal-only tool |
+
+#### Enterprise Software & Database Vendors
+
+| Company | Product | Technology | Limitation QueryCraft Solves |
+|---------|---------|------------|------------------------------|
+| **Oracle** | Select AI | LLM + Autonomous DB | Oracle DB only, expensive |
+| **Salesforce** | Einstein Analytics | AI + SOQL | Salesforce ecosystem only |
+| **SAP** | Analytics Cloud | NLP + HANA SQL | SAP HANA required |
+| **Snowflake** | Cortex AI | LLM + SQL | Snowflake subscription required |
+| **Databricks** | AI/BI Genie | LLM + Spark SQL | Databricks platform only |
+| **IBM** | Watson Analytics | NLP + SQL | Enterprise licensing |
+
+#### BI & Analytics Platforms
+
+| Company | Product | Technology | Limitation QueryCraft Solves |
+|---------|---------|------------|------------------------------|
+| **Tableau** | Ask Data | NLP + VizQL | Tableau license, VizQL not SQL |
+| **ThoughtSpot** | Sage | NL-to-SQL + LLM | Enterprise pricing ($100K+/yr) |
+| **Looker (Google)** | Looker + Gemini | LLM + LookML | GCP required, LookML not SQL |
+| **Qlik** | Qlik Sense AI | NLP + Associative Engine | Proprietary engine |
+| **Domo** | Domo AI | NLP + SQL | SaaS subscription required |
+
+#### Tech Unicorns & Innovators
+
+| Company | Product | Technology | Limitation QueryCraft Solves |
+|---------|---------|------------|------------------------------|
+| **Uber** | Databook | NLP + SQL Discovery | Internal tool, not available |
+| **Airbnb** | Minerva | Semantic Layer + SQL | Internal, company-specific |
+| **LinkedIn** | Data Hub | NLP + Metadata SQL | Not publicly deployable |
+| **Spotify** | Internal Analytics | Beam + SQL | Internal infrastructure |
+| **Stripe** | Sigma | NLP-assisted SQL | Payment domain only |
+| **Palantir** | Foundry AIP | LLM + SQL | $1M+ enterprise contracts |
+
+### 📈 Market Opportunity
+
+| Metric | Value | Source |
+|--------|-------|--------|
+| BI Tools Market (2024) | **$33.3 billion** | Gartner |
+| Projected Market (2029) | **$54.9 billion** | MarketsandMarkets |
+| CAGR | **10.5%** | Industry reports |
+| Key Growth Driver | Natural language interfaces | Analyst consensus |
+| NL-to-SQL Segment Growth | **25%+ annually** | Enterprise adoption trends |
+
+### QueryCraft's Position
+
+QueryCraft addresses the **underserved segment** of the NL-to-SQL market:
+
+| Segment | Current Solutions | QueryCraft Advantage |
+|---------|-------------------|---------------------|
+| **Startups & SMBs** | Can't afford $100K+ enterprise tools | Free, open-source, runs on free Colab |
+| **Multi-cloud orgs** | Locked into single vendor's NL tool | Database-agnostic, portable SQL |
+| **Research & Academia** | Need customizable, explainable models | Open weights, transparent RAG, fine-tunable |
+| **Regulated industries** | Can't send data to cloud LLM APIs | Runs 100% locally, no data leaves the org |
+| **Domain specialists** | Generic models don't know their schemas | Fine-tune on domain data in 7 minutes |
+
+> **Bottom line:** While enterprise solutions cost $50K-500K/year and lock you into one vendor, QueryCraft delivers comparable NL-to-SQL capability for free, on any database, with full transparency and customizability.
+
+---
+
 ## 📁 Repository Structure
 
 ```
@@ -64,22 +187,24 @@ QueryCraft/
 │   ├── QueryCraft_Day2_FineTuning.ipynb       # Fine-tuning with 3 HP configs (A, B, C)
 │   ├── QueryCraft_Day3_Evaluation.ipynb       # Evaluation metrics, error analysis, visualizations
 │   ├── QueryCraft_Day4_Demo.ipynb             # Gradio demo (dropdown + natural language)
-│   └── QueryCraft_Day5.ipynb                # ✅ Complete pipeline — RUN THIS
+│   └── QueryCraft_Day5.ipynb                  # ✅ Complete pipeline — RUN THIS
 ├── 📊 report/
-│   └── Technical_Report.docx               # Detailed technical report (5-7 pages)
-├── 📈 results/                             # Generated after running Day 3
-│   ├── evaluation_report.json              # Baseline vs fine-tuned metrics
-│   ├── final_summary.json                  # Complete project summary
-│   ├── predictions.csv                     # Model predictions on test set
+│   └── Technical_Report.docx                  # Detailed technical report (5-7 pages)
+├── 🖼️ assets/
+│   └── architecture.png                       # Architecture diagram
+├── 📈 results/                                # Generated after running Day 5
+│   ├── final_results.json                     # Complete project metrics
 │   └── visualizations/
-│       ├── model_comparison.png            # Baseline vs fine-tuned bar chart
-│       ├── error_distribution.png          # Error category breakdown
-│       ├── improvement_chart.png           # Metric improvement visualization
-│       ├── hyperparameter_comparison.png   # Config A vs B vs C
-│       └── training_curves.png             # Loss curves across training
-├── 📋 requirements.txt                     # Python dependencies
-├── 📖 README.md                            # This file
-└── 📜 LICENSE                              # MIT License
+│       ├── 01_hyperparameter_comparison.png
+│       ├── 02_model_comparison.png
+│       ├── 03_rag_comparison.png
+│       ├── 04_error_analysis.png
+│       ├── 05_training_curves.png
+│       ├── 06_demo_coverage.png
+│       └── 07_final_dashboard.png
+├── 📋 requirements.txt                        # Python dependencies
+├── 📖 README.md                               # This file
+└── 📜 LICENSE                                 # MIT License
 ```
 
 ---
@@ -120,8 +245,6 @@ Running on public URL: https://xxxxx.gradio.live    ← Click this!
 | Day 3 | `QueryCraft_Day3_Evaluation.ipynb` | Evaluation metrics, error analysis, visualizations |
 | Day 4 | `QueryCraft_Day4_Demo.ipynb` | Gradio demo prototyping |
 | **Day 5** | **`QueryCraft_Day5.ipynb`** | **✅ Complete pipeline — RUN THIS ONE** |
-
----
 
 ### Local Machine (GPU Required)
 
@@ -188,6 +311,33 @@ jupyter notebook notebooks/QueryCraft_Day5.ipynb
 | Effective Batch Size | 16 (4 × 4 gradient accumulation) |
 | Optimizer | Paged AdamW 8-bit |
 | Training Loss | **0.7436** |
+
+### Hyperparameter Search Results
+
+| Config | LR | LoRA Rank | LoRA α | Training Loss | Notes |
+|--------|-----|-----------|--------|---------------|-------|
+| A | 3e-4 | 8 | 16 | 1.1319 | Higher LR → instability |
+| **B ⭐** | **2e-4** | **16** | **32** | **0.7436** | **Best** |
+| C | 1e-4 | 32 | 64 | 1.1827 | Low LR → insufficient learning |
+
+### QLoRA Configuration
+
+```python
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_compute_dtype=torch.float16,
+    bnb_4bit_use_double_quant=True,
+)
+
+lora_config = LoraConfig(
+    r=16,
+    lora_alpha=32,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
+    lora_dropout=0.1,
+    task_type="CAUSAL_LM",
+)
+```
 
 ---
 
@@ -257,15 +407,17 @@ The Gradio interface provides two modes of interaction:
 | Syntax Errors | 1 | 10% | Unparseable SQL |
 | Other | 2 | 20% | Wrong table/column names |
 
-### Visualizations Generated (Day 3)
+### Visualizations Generated (Day 5)
 
 ```
 results/visualizations/
-├── model_comparison.png           # Baseline vs fine-tuned side-by-side
-├── error_distribution.png         # Error category pie chart
-├── improvement_chart.png          # Metric improvement waterfall
-├── hyperparameter_comparison.png  # Config A vs B vs C
-└── training_curves.png            # Loss over training steps
+├── 01_hyperparameter_comparison.png   # Config A vs B vs C
+├── 02_model_comparison.png            # Baseline vs fine-tuned + radar chart
+├── 03_rag_comparison.png              # No RAG vs With RAG
+├── 04_error_analysis.png              # Error pie + examples + improvements
+├── 05_training_curves.png             # Loss curve + LR schedule
+├── 06_demo_coverage.png               # Demo stats + Spider domains
+└── 07_final_dashboard.png             # Combined summary dashboard
 ```
 
 ---
@@ -273,6 +425,16 @@ results/visualizations/
 ## 🎥 Video Walkthrough
 
 📺 **[Watch the Demo Video](https://youtu.be/3ID1DSgGKvE)**
+
+5-7 minute demonstration covering:
+
+| Section | Duration | Content |
+|---------|----------|---------|
+| Approach & Implementation | 1:00 | QLoRA, RAG pipeline, Spider dataset |
+| Technical Decisions | 1:00 | HP configs, challenges, why TinyLlama |
+| Results & Analysis | 1:30 | Performance plots and metrics explained |
+| Live Demo | 2:00 | 4 queries across 3 databases (dropdown + NL) |
+| Conclusion | 0:30 | Key achievements, future work |
 
 ---
 
@@ -302,8 +464,9 @@ results/visualizations/
 
 ## 👤 Author
 
-**Aravind Balaji**
-MS in Information Systems | Northeastern University
+**Aravind Balaji**  
+MS in Information Systems | Northeastern University  
+
 
 ---
 
