@@ -1,0 +1,91 @@
+{
+  "project": "QueryCraft",
+  "course": "INFO 7375 - Prompt Engineering & AI",
+  "student": "Aravind Balaji",
+  "nuid": "001564773",
+  "model": "TinyLlama-1.1B-Chat-v1.0",
+  "dataset": "Spider (Yale)",
+  "training_samples": 1000,
+  "total_dataset": 7000,
+  "hyperparameter_search": {
+    "config_a": {
+      "lr": "3e-4",
+      "rank": 8,
+      "alpha": 16,
+      "loss": 1.1319
+    },
+    "config_b": {
+      "lr": "2e-4",
+      "rank": 16,
+      "alpha": 32,
+      "loss": 0.7436,
+      "best": true
+    },
+    "config_c": {
+      "lr": "1e-4",
+      "rank": 32,
+      "alpha": 64,
+      "loss": 1.1827
+    }
+  },
+  "evaluation": {
+    "baseline_vs_finetuned": {
+      "exact_match": {
+        "baseline": 0.0,
+        "finetuned": 8.0,
+        "improvement": "+8.0%"
+      },
+      "valid_sql": {
+        "baseline": 98.0,
+        "finetuned": 100.0,
+        "improvement": "+2.0%"
+      },
+      "has_select": {
+        "baseline": 0.0,
+        "finetuned": 100.0,
+        "improvement": "+100.0%"
+      },
+      "has_from": {
+        "baseline": 0.0,
+        "finetuned": 94.0,
+        "improvement": "+94.0%"
+      },
+      "where_match": {
+        "baseline": 52.0,
+        "finetuned": 72.0,
+        "improvement": "+20.0%"
+      }
+    },
+    "rag_comparison": {
+      "component_match_no_rag": 18.76,
+      "component_match_with_rag": 19.37,
+      "rag_improvement": "+3.2%",
+      "valid_sql_no_rag": 96.0,
+      "valid_sql_with_rag": 82.0
+    }
+  },
+  "error_analysis": {
+    "missing_clauses": {
+      "count": 4,
+      "pct": 40
+    },
+    "wrong_aggregation": {
+      "count": 3,
+      "pct": 30
+    },
+    "syntax_errors": {
+      "count": 1,
+      "pct": 10
+    },
+    "other": {
+      "count": 2,
+      "pct": 20
+    }
+  },
+  "demo_databases": [
+    "University",
+    "HR",
+    "E-commerce"
+  ],
+  "visualizations_generated": 7
+}

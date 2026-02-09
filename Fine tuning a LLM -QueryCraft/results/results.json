@@ -1,0 +1,113 @@
+{
+  "project": "QueryCraft",
+  "course": "INFO 7375 - Prompt Engineering & AI",
+  "student": "Aravind Balaji",
+  "nuid": "001564773",
+  "model": "TinyLlama-1.1B-Chat-v1.0",
+  "dataset": "Spider (Yale)",
+  "training_samples": 1000,
+  "total_dataset": 7000,
+  "unique_databases": 160,
+  "unique_tables": 900,
+  "video": "https://youtu.be/3ID1DSgGKvE",
+  "hyperparameter_search": {
+    "config_a": {
+      "learning_rate": "3e-4",
+      "lora_rank": 8,
+      "lora_alpha": 16,
+      "epochs": 1,
+      "training_loss": 1.1319,
+      "notes": "Higher LR caused instability"
+    },
+    "config_b": {
+      "learning_rate": "2e-4",
+      "lora_rank": 16,
+      "lora_alpha": 32,
+      "epochs": 1,
+      "training_loss": 0.7436,
+      "best": true,
+      "notes": "Best configuration - balanced LR and rank"
+    },
+    "config_c": {
+      "learning_rate": "1e-4",
+      "lora_rank": 32,
+      "lora_alpha": 64,
+      "epochs": 1,
+      "training_loss": 1.1827,
+      "notes": "Low LR - insufficient learning in 1 epoch"
+    }
+  },
+  "evaluation": {
+    "baseline_vs_finetuned": {
+      "exact_match": {
+        "baseline": 0.0,
+        "finetuned": 8.0,
+        "improvement": "+8.0%"
+      },
+      "valid_sql": {
+        "baseline": 98.0,
+        "finetuned": 100.0,
+        "improvement": "+2.0%"
+      },
+      "has_select": {
+        "baseline": 0.0,
+        "finetuned": 100.0,
+        "improvement": "+100.0%"
+      },
+      "has_from": {
+        "baseline": 0.0,
+        "finetuned": 94.0,
+        "improvement": "+94.0%"
+      },
+      "where_match": {
+        "baseline": 52.0,
+        "finetuned": 72.0,
+        "improvement": "+20.0%"
+      }
+    },
+    "rag_comparison": {
+      "component_match_no_rag": 18.76,
+      "component_match_with_rag": 19.37,
+      "rag_improvement": "+3.2%",
+      "valid_sql_no_rag": 96.0,
+      "valid_sql_with_rag": 82.0
+    }
+  },
+  "error_analysis": {
+    "missing_clauses": {
+      "count": 4,
+      "percentage": 40,
+      "description": "Missing FROM, WHERE, ORDER BY"
+    },
+    "wrong_aggregation": {
+      "count": 3,
+      "percentage": 30,
+      "description": "Incorrect COUNT, SUM, AVG usage"
+    },
+    "syntax_errors": {
+      "count": 1,
+      "percentage": 10,
+      "description": "Unparseable SQL output"
+    },
+    "other": {
+      "count": 2,
+      "percentage": 20,
+      "description": "Wrong table/column names"
+    }
+  },
+  "demo": {
+    "databases": ["University", "HR", "E-commerce"],
+    "modes": ["Dropdown Examples", "Natural Language + RAG"],
+    "example_queries_per_db": 8,
+    "total_example_queries": 24
+  },
+  "training_environment": {
+    "platform": "Google Colab",
+    "gpu": "Tesla T4 (15.8 GB VRAM)",
+    "precision": "FP16 mixed",
+    "optimizer": "Paged AdamW 8-bit",
+    "lr_scheduler": "Cosine with 3% warmup",
+    "effective_batch_size": 16,
+    "quantization": "4-bit NF4 + double quantization"
+  }
+}
