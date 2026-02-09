@@ -7,9 +7,6 @@
 
 > **RAG-Enhanced SQL Generation: Fine-Tuning TinyLlama-1.1B for Natural Language to SQL Translation**
 
-<p align="center">
-  <img src="./results/visualisations/architecture.png" alt="QueryCraft Architecture" width="750">
-</p>
 
 ---
 
@@ -56,6 +53,11 @@ User Question ──► Embedding ──► Vector Search ──► Schema Conte
                                                        ▼
                                               Generated SQL ──► SQLite ──► Results
 ```
+
+
+<p align="center">
+  <img src="./results/visualisations/architecture.png" alt="QueryCraft Architecture" width="750">
+</p>
 
 ---
 
