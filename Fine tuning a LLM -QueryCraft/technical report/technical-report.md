@@ -4,7 +4,7 @@
 
 **Course:** INFO 7375 — Prompt Engineering & AI  
 **Student:** Aravind Balaji  
-**NUID:** 001564773
+
 
 ---
 
