@@ -1,0 +1,40 @@
+# QueryCraft - RAG-Enhanced SQL Generation
+# Course: INFO 7375 - Prompt Engineering & AI
+# Python 3.10+ required
+
+# Core ML/DL
+torch>=2.0.0
+transformers>=4.36.0
+datasets>=2.14.0
+accelerate>=0.25.0
+
+# Parameter-Efficient Fine-Tuning
+peft>=0.7.0
+bitsandbytes>=0.41.0
+trl>=0.7.0
+
+# RAG Components
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# SQL Processing
+sqlparse>=0.4.4
+
+# Demo Interface
+gradio>=4.0.0
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# Evaluation
+scikit-learn>=1.4.0
+
+# Utilities
+tqdm>=4.65.0
+sentencepiece
+protobuf
